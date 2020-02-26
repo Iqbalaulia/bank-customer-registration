@@ -1,3 +1,11 @@
+<!-- cek apakah yang mengakses halaman ini sudah login -->
+<?php 
+	session_start();
+	if($_SESSION['level']==""){
+		header("location:index.php?pesan=gagal");
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
