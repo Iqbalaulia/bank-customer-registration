@@ -33,28 +33,21 @@ if($cek > 0){
 		$_SESSION['nip'] = $nip;
 		$_SESSION['level'] = "Teller";
 		// alihkan ke halaman dashboard admin
-		header("location:../index.php");
+		header("location:../teller/dashboard-teller.php");
 
 	// cek jika user login sebagai pegawai
-	}else if($data['level']=="kasir"){
+	}else if($data['level']=="Manager"){
 		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "kasir";
+		$_SESSION['nip'] = $nip;
+		$_SESSION['level'] = "Manager";
 		// alihkan ke halaman dashboard pegawai
-		header("location:resource/view/pembayaran/dashboard-pembayaran.php");
+		header("location:../pimpinan/dashboard-pimpinan.php");
 
 	// cek jika user login sebagai pengurus
-	}else if($data['level']=="pengurus"){
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "pengurus";
-		// alihkan ke halaman dashboard pengurus
-		header("location:halaman_pengurus.php");
-
 	}else{
 
 		// alihkan ke halaman login kembali
-		header("location:login.php");
+		header("location:../index.php");
 	}	
 }else{
 	header("location:validation_login_error.php");
