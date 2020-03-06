@@ -33,7 +33,11 @@
           <div class="login-box mr-5">
             <div class="card">
               <div class="card-body login-card-body">
-                <p class="login-box-msg">Selamat datang !</p>
+                <div class="image d-flex justify-content-center">
+                <img src="logo/bank-jelita.jpg" width="100" class="img-circle elevation-2 " alt="User Image">
+
+                </div>
+                <p class="login-box-msg mt-2">Selamat datang !</p>
 
                 <form action="./function/validation-login.php" method="post">
                   <div class="input-group mb-3">
@@ -66,9 +70,10 @@
                     </div>
                   </div>
                 </form>
-                
-                    <a href="register-user.php" class="btn-register text-center btn btn-outline-primary mt-2">Register a new teller</a>
-                
+
+                <a href="register-user.php" class="btn-register text-center btn btn-outline-primary mt-2">Register a new
+                  teller</a>
+
               </div>
             </div>
           </div>

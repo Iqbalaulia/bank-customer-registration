@@ -1,4 +1,10 @@
-.btn-outline-primary{
+.login-box {
+  -webkit-box-shadow: 7px 5px 5px 6px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 7px 5px 5px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 7px 5px 5px 6px rgba(0, 0, 0, 0.04);
+}
 
-    width: 100%;
+.btn-outline-primary {
+
+  width: 100%;
 }
