@@ -42,50 +42,31 @@ $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(65,7,'',0,0);
-$pdf->Cell(50,7,'LAPORAN DATA KARYAWAN',0,0);
+$pdf->Cell(50,7,'LAPORAN DATA NASABAH',0,0);
 
 $pdf->Cell(155,5,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(15,6,'NO',1,0,'C');
-$pdf->Cell(60,6,'NIP',1,0,'C');
-$pdf->Cell(75,6,'Nama',1,0,'C');
-$pdf->Cell(40,6,'Jabatan',1,1,'C');
+$pdf->Cell(60,6,'Nama',1,0,'C');
+$pdf->Cell(35,6,'Rekening',1,0,'C');
+$pdf->Cell(40,6,'Jumlah Setoran',1,0,'C');
+$pdf->Cell(40,6,'Tanggal Setoran',1,1,'C');
 
  
 $pdf->SetFont('Arial','',10);
 $i=1;
-$query = mysqli_query($koneksi, "SELECT * FROM user WHERE level = 'Manager'");
+$query = mysqli_query($koneksi, "SELECT * FROM data_nasabaah WHERE setoran_tunai != 0");
 while ($row = mysqli_fetch_array($query)){
     $pdf->Cell(15,10,$i++,1,0,'C');
-    $pdf->Cell(60,10,$row['nip'],1,0,'C');
-    $pdf->Cell(75,10,$row['nama'],1,0,'C');
-    $pdf->Cell(40,10,$row['jabatan'],1,1,'C');
+    $pdf->Cell(60,10,$row['nama_nasabah'],1,0,'');
+    $pdf->Cell(35,10,$row['nomor_rekening'],1,0,'C');
+    $pdf->Cell(40,10,'Rp. ' .$row['setoran_tunai'],1,0,'C');
+    $pdf->Cell(40,10,date('d F Y', strtotime($row['tanggal_setoran'])),1,1,'C');
 }
 
-$pdf->SetFont('Arial','B',12);
 
-
-$pdf->Cell(155,5,'',0,1);
-$pdf->Cell(10,7,'',0,1);
-
-$pdf->SetFont('Arial','B',10);
-$pdf->Cell(15,6,'NO',1,0,'C');
-$pdf->Cell(60,6,'NIP',1,0,'C');
-$pdf->Cell(75,6,'Nama',1,0,'C');
-$pdf->Cell(40,6,'Jabatan',1,1,'C');
-
- 
-$pdf->SetFont('Arial','',10);
-$i=1;
-$query = mysqli_query($koneksi, "SELECT * FROM user WHERE level != 'Manager'");
-while ($row = mysqli_fetch_array($query)){
-    $pdf->Cell(15,10,$i++,1,0,'C');
-    $pdf->Cell(60,10,$row['nip'],1,0,'C');
-    $pdf->Cell(75,10,$row['nama'],1,0,'C');
-    $pdf->Cell(40,10,$row['jabatan'],1,1,'C');
-}
 
 
 $pdf->Cell(200,7,'',0,0);

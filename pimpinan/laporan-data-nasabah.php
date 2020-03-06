@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dashboard TELLER</title>
+  <title>Dashboard Manager</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -140,7 +140,7 @@
 
                 <div class="card-footer" align="right">
                   <form target="_blank" method="POST"
-                    action="../function/print-data-nasabah.php">
+                    action="../function/print-laporan-nasabah.php">
                     <button type="submit" class="btn btn-outline-success mr-1 mb-1"><i class="fas fa-print"
                         data-toggle="tooltip" data-placement="top" title="Cetak Laporan Data Nasabah"></i> Data
                       Nasabah</button>

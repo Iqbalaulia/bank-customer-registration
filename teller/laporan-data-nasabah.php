@@ -140,7 +140,7 @@
 
                 <div class="card-footer" align="right">
                   <form target="_blank" method="POST"
-                    action="../function/print-data-nasabah.php">
+                    action="../function/print-laporan-nasabah.php">
                     <button type="submit" class="btn btn-outline-success mr-1 mb-1"><i class="fas fa-print"
                         data-toggle="tooltip" data-placement="top" title="Cetak Laporan Data Nasabah"></i> Data
                       Nasabah</button>
